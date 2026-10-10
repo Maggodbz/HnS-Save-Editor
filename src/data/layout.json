@@ -1,0 +1,1263 @@
+{
+  "generator": "tools/gen-layout.ts",
+  "source": "pokemonHnS",
+  "constants": {
+    "NUM_SPECIES": 462,
+    "NATIONAL_DEX_COUNT": 420,
+    "NUM_DEX_FLAG_BYTES": 58,
+    "SPECIES_EGG": 462,
+    "SPECIES_UNOWN": 201,
+    "SPECIES_SHEDINJA": 303,
+    "MOVES_COUNT": 368,
+    "ITEMS_COUNT": 398,
+    "ABILITIES_COUNT": 82,
+    "NUMBER_OF_MON_TYPES": 19,
+    "NUM_NATURES": 25,
+    "HIDDEN_NATURE_NONE": 26,
+    "MAX_LEVEL": 100,
+    "MAX_MON_MOVES": 4,
+    "PARTY_SIZE": 6,
+    "NUM_STATS": 6,
+    "TOTAL_BOXES_COUNT": 15,
+    "IN_BOX_COUNT": 30,
+    "BOX_NAME_LENGTH": 8,
+    "POKEMON_NAME_LENGTH": 10,
+    "PLAYER_NAME_LENGTH": 7,
+    "MOVE_NAME_LENGTH": 12,
+    "ITEM_NAME_LENGTH": 14,
+    "ABILITY_NAME_LENGTH": 12,
+    "TRAINER_ID_LENGTH": 4,
+    "PC_ITEMS_COUNT": 50,
+    "BAG_ITEMS_COUNT": 90,
+    "BAG_KEYITEMS_COUNT": 30,
+    "BAG_POKEBALLS_COUNT": 16,
+    "BAG_TMHM_COUNT": 64,
+    "BAG_BERRIES_COUNT": 46,
+    "MAX_BAG_ITEM_CAPACITY": 999,
+    "MAX_PC_ITEM_CAPACITY": 999,
+    "MAX_BERRY_CAPACITY": 999,
+    "MAX_COINS": 9999,
+    "MAX_BATTLE_FRONTIER_POINTS": 9999,
+    "MAX_PER_STAT_EVS": 252,
+    "MAX_TOTAL_EVS": 510,
+    "MAX_IV_MASK": 31,
+    "MAX_FRIENDSHIP": 255,
+    "SHINY_ODDS": 8,
+    "SECTOR_DATA_SIZE": 4084,
+    "SECTOR_SIZE": 4096,
+    "SECTOR_SIGNATURE": 134291493,
+    "NUM_SECTORS_PER_SLOT": 14,
+    "NUM_SAVE_SLOTS": 2,
+    "SECTORS_COUNT": 32,
+    "POCKET_ITEMS": 1,
+    "POCKET_POKE_BALLS": 2,
+    "POCKET_TM_HM": 3,
+    "POCKET_BERRIES": 4,
+    "POCKET_KEY_ITEMS": 5,
+    "ITEM_NONE": 0,
+    "ITEM_TM01": 289,
+    "ITEM_HM01": 339,
+    "NUM_TECHNICAL_MACHINES": 50,
+    "NUM_HIDDEN_MACHINES": 8,
+    "ITEM_POKE_BALL": 4,
+    "ITEM_MASTER_BALL": 1,
+    "ITEM_RARE_CANDY": 68,
+    "ITEM_HEART_SCALE": 111,
+    "MON_MALE": 0,
+    "MON_FEMALE": 254,
+    "MON_GENDERLESS": 255,
+    "FLAG_FINITE_TMS": 113,
+    "FLAG_LIMIT_TO_50": 84,
+    "FLAGS_COUNT": 2400,
+    "VARS_START": 16384,
+    "VERSION_EMERALD": 3,
+    "GAME_LANGUAGE": 2,
+    "LANGUAGE_ENGLISH": 2,
+    "MAIL_NONE": 255,
+    "STAT_HP": 0,
+    "STAT_ATK": 1,
+    "STAT_DEF": 2,
+    "STAT_SPEED": 3,
+    "STAT_SPATK": 4,
+    "STAT_SPDEF": 5,
+    "GROWTH_MEDIUM_FAST": 0,
+    "ABILITY_NONE": 0,
+    "MOVE_NONE": 0,
+    "TYPE_MYSTERY": 9
+  },
+  "structs": {
+    "SaveBlock2": {
+      "size": 3920,
+      "fields": {
+        "playerName": {
+          "offset": 0,
+          "size": 8
+        },
+        "playerGender": {
+          "offset": 8,
+          "bit": 0,
+          "bits": 8
+        },
+        "playerTrainerId": {
+          "offset": 10,
+          "size": 4
+        },
+        "playTimeHours": {
+          "offset": 14,
+          "bit": 0,
+          "bits": 16
+        },
+        "playTimeMinutes": {
+          "offset": 16,
+          "bit": 0,
+          "bits": 8
+        },
+        "playTimeSeconds": {
+          "offset": 17,
+          "bit": 0,
+          "bits": 8
+        },
+        "pokedexNationalMagic": {
+          "offset": 30,
+          "bit": 0,
+          "bits": 8
+        },
+        "pokedexOwned": {
+          "offset": 44,
+          "size": 58
+        },
+        "pokedexSeen": {
+          "offset": 102,
+          "size": 58
+        },
+        "pokedexUnownPersonality": {
+          "offset": 32,
+          "bit": 0,
+          "bits": 32
+        },
+        "pokedexSpindaPersonality": {
+          "offset": 36,
+          "bit": 0,
+          "bits": 32
+        },
+        "encryptionKey": {
+          "offset": 188,
+          "bit": 0,
+          "bits": 32
+        },
+        "battlePoints": {
+          "offset": 3784,
+          "bit": 0,
+          "bits": 16
+        }
+      }
+    },
+    "SaveBlock1": {
+      "size": 15800,
+      "fields": {
+        "playerPartyCount": {
+          "offset": 564,
+          "bit": 0,
+          "bits": 8
+        },
+        "playerParty": {
+          "offset": 568,
+          "size": 600
+        },
+        "money": {
+          "offset": 1168,
+          "bit": 0,
+          "bits": 32
+        },
+        "coins": {
+          "offset": 1172,
+          "bit": 0,
+          "bits": 16
+        },
+        "registeredItem": {
+          "offset": 1174,
+          "bit": 0,
+          "bits": 16
+        },
+        "pcItems": {
+          "offset": 1176,
+          "size": 200
+        },
+        "bagPocket_Items": {
+          "offset": 1376,
+          "size": 360
+        },
+        "bagPocket_KeyItems": {
+          "offset": 1736,
+          "size": 120
+        },
+        "bagPocket_PokeBalls": {
+          "offset": 1856,
+          "size": 64
+        },
+        "bagPocket_TMHM": {
+          "offset": 1920,
+          "size": 256
+        },
+        "bagPocket_Berries": {
+          "offset": 2176,
+          "size": 184
+        },
+        "seen1": {
+          "offset": 2680,
+          "size": 58
+        },
+        "seen2": {
+          "offset": 15144,
+          "size": 58
+        },
+        "flags": {
+          "offset": 4964,
+          "size": 300
+        },
+        "vars": {
+          "offset": 5264,
+          "size": 512
+        },
+        "tx_Random_Chaos": {
+          "offset": 15773,
+          "bit": 0,
+          "bits": 1
+        },
+        "tx_Random_WildPokemon": {
+          "offset": 15773,
+          "bit": 1,
+          "bits": 1
+        },
+        "tx_Random_Similar": {
+          "offset": 15773,
+          "bit": 2,
+          "bits": 1
+        },
+        "tx_Random_MapBased": {
+          "offset": 15773,
+          "bit": 3,
+          "bits": 1
+        },
+        "tx_Random_IncludeLegendaries": {
+          "offset": 15773,
+          "bit": 4,
+          "bits": 1
+        },
+        "tx_Random_Type": {
+          "offset": 15773,
+          "bit": 5,
+          "bits": 1
+        },
+        "tx_Random_TypeEffectiveness": {
+          "offset": 15773,
+          "bit": 6,
+          "bits": 1
+        },
+        "tx_Random_Abilities": {
+          "offset": 15773,
+          "bit": 7,
+          "bits": 1
+        },
+        "tx_Random_Moves": {
+          "offset": 15774,
+          "bit": 0,
+          "bits": 1
+        },
+        "tx_Random_Trainer": {
+          "offset": 15774,
+          "bit": 1,
+          "bits": 1
+        },
+        "tx_Random_Evolutions": {
+          "offset": 15774,
+          "bit": 2,
+          "bits": 1
+        },
+        "tx_Random_EvolutionMethods": {
+          "offset": 15774,
+          "bit": 3,
+          "bits": 1
+        },
+        "tx_Random_Items": {
+          "offset": 15777,
+          "bit": 4,
+          "bits": 1
+        },
+        "tx_Random_Static": {
+          "offset": 15778,
+          "bit": 2,
+          "bits": 1
+        },
+        "tx_Random_Starter": {
+          "offset": 15779,
+          "bit": 1,
+          "bits": 1
+        },
+        "tx_Challenges_EvoLimit": {
+          "offset": 15774,
+          "bit": 4,
+          "bits": 2
+        },
+        "tx_Challenges_Nuzlocke": {
+          "offset": 15774,
+          "bit": 6,
+          "bits": 1
+        },
+        "tx_Challenges_NuzlockeHardcore": {
+          "offset": 15774,
+          "bit": 7,
+          "bits": 1
+        },
+        "tx_Challenges_OneTypeChallenge": {
+          "offset": 15775,
+          "bit": 0,
+          "bits": 5
+        },
+        "tx_Challenges_PartyLimit": {
+          "offset": 15775,
+          "bit": 5,
+          "bits": 3
+        },
+        "tx_Challenges_NoItemPlayer": {
+          "offset": 15776,
+          "bit": 0,
+          "bits": 1
+        },
+        "tx_Challenges_NoItemTrainer": {
+          "offset": 15776,
+          "bit": 1,
+          "bits": 1
+        },
+        "tx_Challenges_PkmnCenter": {
+          "offset": 15776,
+          "bit": 2,
+          "bits": 2
+        },
+        "tx_Challenges_LessEscapes": {
+          "offset": 15776,
+          "bit": 4,
+          "bits": 1
+        },
+        "tx_Challenges_BaseStatEqualizer": {
+          "offset": 15776,
+          "bit": 5,
+          "bits": 2
+        },
+        "tx_Challenges_LevelCap": {
+          "offset": 15777,
+          "bit": 0,
+          "bits": 2
+        },
+        "tx_Challenges_ExpMultiplier": {
+          "offset": 15777,
+          "bit": 2,
+          "bits": 2
+        },
+        "tx_Challenges_Mirror": {
+          "offset": 15778,
+          "bit": 0,
+          "bits": 1
+        },
+        "tx_Challenges_Mirror_Thief": {
+          "offset": 15778,
+          "bit": 1,
+          "bits": 1
+        },
+        "tx_Challenges_NoEVs": {
+          "offset": 15778,
+          "bit": 3,
+          "bits": 1
+        },
+        "tx_Challenges_TrainerScalingIVs": {
+          "offset": 15778,
+          "bit": 4,
+          "bits": 2
+        },
+        "tx_Challenges_TrainerScalingEVs": {
+          "offset": 15778,
+          "bit": 6,
+          "bits": 2
+        },
+        "tx_Challenges_MaxPartyIVs": {
+          "offset": 15779,
+          "bit": 2,
+          "bits": 2
+        },
+        "tx_Challenges_PCHeal": {
+          "offset": 15780,
+          "bit": 0,
+          "bits": 1
+        },
+        "tx_Challenges_Expensive": {
+          "offset": 15782,
+          "bit": 4,
+          "bits": 3
+        },
+        "tx_Nuzlocke_SpeciesClause": {
+          "offset": 15777,
+          "bit": 5,
+          "bits": 1
+        },
+        "tx_Nuzlocke_ShinyClause": {
+          "offset": 15777,
+          "bit": 6,
+          "bits": 1
+        },
+        "tx_Nuzlocke_Nicknaming": {
+          "offset": 15777,
+          "bit": 7,
+          "bits": 1
+        },
+        "tx_Nuzlocke_Deletion": {
+          "offset": 15779,
+          "bit": 0,
+          "bits": 1
+        },
+        "tx_Nuzlocke_EasyMode": {
+          "offset": 15779,
+          "bit": 7,
+          "bits": 1
+        },
+        "tx_Nuzlocke_RareCandy": {
+          "offset": 15796,
+          "bit": 0,
+          "bits": 1
+        },
+        "tx_Mode_InfiniteTMs": {
+          "offset": 15779,
+          "bit": 4,
+          "bits": 1
+        },
+        "tx_Mode_PoisonSurvive": {
+          "offset": 15779,
+          "bit": 5,
+          "bits": 1
+        },
+        "tx_Mode_AlternateSpawns": {
+          "offset": 15780,
+          "bit": 2,
+          "bits": 1
+        },
+        "tx_Mode_Synchronize": {
+          "offset": 15781,
+          "bit": 2,
+          "bits": 1
+        },
+        "tx_Mode_Mints": {
+          "offset": 15781,
+          "bit": 3,
+          "bits": 1
+        },
+        "tx_Mode_New_Citrus": {
+          "offset": 15781,
+          "bit": 4,
+          "bits": 1
+        },
+        "tx_Mode_Modern_Types": {
+          "offset": 15781,
+          "bit": 5,
+          "bits": 1
+        },
+        "tx_Mode_Fairy_Types": {
+          "offset": 15781,
+          "bit": 6,
+          "bits": 1
+        },
+        "tx_Mode_New_Stats": {
+          "offset": 15781,
+          "bit": 7,
+          "bits": 1
+        },
+        "tx_Mode_Sturdy": {
+          "offset": 15782,
+          "bit": 0,
+          "bits": 1
+        },
+        "tx_Mode_Modern_Moves": {
+          "offset": 15782,
+          "bit": 1,
+          "bits": 1
+        },
+        "tx_Mode_Legendary_Abilities": {
+          "offset": 15782,
+          "bit": 2,
+          "bits": 1
+        },
+        "tx_Mode_New_Legendaries": {
+          "offset": 15782,
+          "bit": 3,
+          "bits": 1
+        },
+        "tx_Features_ShinyColors": {
+          "offset": 15779,
+          "bit": 6,
+          "bits": 1
+        },
+        "tx_Features_RTCType": {
+          "offset": 15780,
+          "bit": 1,
+          "bits": 1
+        },
+        "tx_Features_LimitDifficulty": {
+          "offset": 15780,
+          "bit": 3,
+          "bits": 1
+        },
+        "tx_Features_ShinyChance": {
+          "offset": 15780,
+          "bit": 4,
+          "bits": 4
+        },
+        "tx_Features_WildMonDropItems": {
+          "offset": 15781,
+          "bit": 0,
+          "bits": 1
+        },
+        "tx_Features_FrontierBans": {
+          "offset": 15783,
+          "bit": 2,
+          "bits": 1
+        },
+        "tx_Difficulty_EscapeRopeDig": {
+          "offset": 15782,
+          "bit": 7,
+          "bits": 1
+        }
+      }
+    },
+    "PokemonStorage": {
+      "size": 36156,
+      "fields": {
+        "currentBox": {
+          "offset": 0,
+          "bit": 0,
+          "bits": 8
+        },
+        "boxes": {
+          "offset": 4,
+          "size": 36000
+        },
+        "boxNames": {
+          "offset": 36004,
+          "size": 135
+        },
+        "boxWallpapers": {
+          "offset": 36139,
+          "size": 15
+        }
+      }
+    },
+    "BoxPokemon": {
+      "size": 80,
+      "fields": {
+        "personality": {
+          "offset": 0,
+          "bit": 0,
+          "bits": 32
+        },
+        "otId": {
+          "offset": 4,
+          "bit": 0,
+          "bits": 32
+        },
+        "nickname": {
+          "offset": 8,
+          "size": 10
+        },
+        "language": {
+          "offset": 18,
+          "bit": 0,
+          "bits": 8
+        },
+        "isBadEgg": {
+          "offset": 19,
+          "bit": 0,
+          "bits": 1
+        },
+        "hasSpecies": {
+          "offset": 19,
+          "bit": 1,
+          "bits": 1
+        },
+        "isEgg": {
+          "offset": 19,
+          "bit": 2,
+          "bits": 1
+        },
+        "blockBoxRS": {
+          "offset": 19,
+          "bit": 3,
+          "bits": 1
+        },
+        "unused": {
+          "offset": 19,
+          "bit": 4,
+          "bits": 3
+        },
+        "inPC": {
+          "offset": 19,
+          "bit": 7,
+          "bits": 1
+        },
+        "otName": {
+          "offset": 20,
+          "size": 7
+        },
+        "markings": {
+          "offset": 27,
+          "bit": 0,
+          "bits": 8
+        },
+        "checksum": {
+          "offset": 28,
+          "bit": 0,
+          "bits": 16
+        },
+        "unknown": {
+          "offset": 30,
+          "bit": 0,
+          "bits": 16
+        },
+        "secure": {
+          "offset": 32,
+          "size": 48
+        }
+      }
+    },
+    "Pokemon": {
+      "size": 100,
+      "fields": {
+        "box": {
+          "offset": 0,
+          "size": 80
+        },
+        "status": {
+          "offset": 80,
+          "bit": 0,
+          "bits": 32
+        },
+        "level": {
+          "offset": 84,
+          "bit": 0,
+          "bits": 8
+        },
+        "mail": {
+          "offset": 85,
+          "bit": 0,
+          "bits": 8
+        },
+        "hp": {
+          "offset": 86,
+          "bit": 0,
+          "bits": 16
+        },
+        "maxHP": {
+          "offset": 88,
+          "bit": 0,
+          "bits": 16
+        },
+        "attack": {
+          "offset": 90,
+          "bit": 0,
+          "bits": 16
+        },
+        "defense": {
+          "offset": 92,
+          "bit": 0,
+          "bits": 16
+        },
+        "speed": {
+          "offset": 94,
+          "bit": 0,
+          "bits": 16
+        },
+        "spAttack": {
+          "offset": 96,
+          "bit": 0,
+          "bits": 16
+        },
+        "spDefense": {
+          "offset": 98,
+          "bit": 0,
+          "bits": 16
+        }
+      }
+    },
+    "PokemonSubstruct0": {
+      "size": 12,
+      "fields": {
+        "species": {
+          "offset": 0,
+          "bit": 0,
+          "bits": 16
+        },
+        "heldItem": {
+          "offset": 2,
+          "bit": 0,
+          "bits": 16
+        },
+        "experience": {
+          "offset": 4,
+          "bit": 0,
+          "bits": 32
+        },
+        "ppBonuses": {
+          "offset": 8,
+          "bit": 0,
+          "bits": 8
+        },
+        "friendship": {
+          "offset": 9,
+          "bit": 0,
+          "bits": 8
+        },
+        "hiddenNature": {
+          "offset": 10,
+          "bit": 0,
+          "bits": 5
+        },
+        "box_ailment": {
+          "offset": 10,
+          "bit": 5,
+          "bits": 3
+        },
+        "box_hp": {
+          "offset": 11,
+          "bit": 0,
+          "bits": 8
+        }
+      }
+    },
+    "PokemonSubstruct1": {
+      "size": 12,
+      "fields": {
+        "moves": {
+          "offset": 0,
+          "size": 8
+        },
+        "pp": {
+          "offset": 8,
+          "size": 4
+        }
+      }
+    },
+    "PokemonSubstruct2": {
+      "size": 12,
+      "fields": {
+        "hpEV": {
+          "offset": 0,
+          "bit": 0,
+          "bits": 8
+        },
+        "attackEV": {
+          "offset": 1,
+          "bit": 0,
+          "bits": 8
+        },
+        "defenseEV": {
+          "offset": 2,
+          "bit": 0,
+          "bits": 8
+        },
+        "speedEV": {
+          "offset": 3,
+          "bit": 0,
+          "bits": 8
+        },
+        "spAttackEV": {
+          "offset": 4,
+          "bit": 0,
+          "bits": 8
+        },
+        "spDefenseEV": {
+          "offset": 5,
+          "bit": 0,
+          "bits": 8
+        },
+        "cool": {
+          "offset": 6,
+          "bit": 0,
+          "bits": 8
+        },
+        "beauty": {
+          "offset": 7,
+          "bit": 0,
+          "bits": 8
+        },
+        "cute": {
+          "offset": 8,
+          "bit": 0,
+          "bits": 8
+        },
+        "smart": {
+          "offset": 9,
+          "bit": 0,
+          "bits": 8
+        },
+        "tough": {
+          "offset": 10,
+          "bit": 0,
+          "bits": 8
+        },
+        "sheen": {
+          "offset": 11,
+          "bit": 0,
+          "bits": 8
+        }
+      }
+    },
+    "PokemonSubstruct3": {
+      "size": 12,
+      "fields": {
+        "pokerus": {
+          "offset": 0,
+          "bit": 0,
+          "bits": 8
+        },
+        "metLocation": {
+          "offset": 1,
+          "bit": 0,
+          "bits": 8
+        },
+        "metLevel": {
+          "offset": 2,
+          "bit": 0,
+          "bits": 7
+        },
+        "metGame": {
+          "offset": 2,
+          "bit": 7,
+          "bits": 4
+        },
+        "pokeball": {
+          "offset": 3,
+          "bit": 3,
+          "bits": 5
+        },
+        "otGender": {
+          "offset": 4,
+          "bit": 0,
+          "bits": 1
+        },
+        "hpIV": {
+          "offset": 4,
+          "bit": 1,
+          "bits": 5
+        },
+        "attackIV": {
+          "offset": 4,
+          "bit": 6,
+          "bits": 5
+        },
+        "defenseIV": {
+          "offset": 5,
+          "bit": 3,
+          "bits": 5
+        },
+        "speedIV": {
+          "offset": 6,
+          "bit": 0,
+          "bits": 5
+        },
+        "spAttackIV": {
+          "offset": 6,
+          "bit": 5,
+          "bits": 5
+        },
+        "spDefenseIV": {
+          "offset": 7,
+          "bit": 2,
+          "bits": 5
+        },
+        "isEgg": {
+          "offset": 7,
+          "bit": 7,
+          "bits": 1
+        },
+        "abilityNum": {
+          "offset": 8,
+          "bit": 0,
+          "bits": 1
+        },
+        "coolRibbon": {
+          "offset": 8,
+          "bit": 1,
+          "bits": 3
+        },
+        "beautyRibbon": {
+          "offset": 8,
+          "bit": 4,
+          "bits": 3
+        },
+        "cuteRibbon": {
+          "offset": 8,
+          "bit": 7,
+          "bits": 3
+        },
+        "smartRibbon": {
+          "offset": 9,
+          "bit": 2,
+          "bits": 3
+        },
+        "toughRibbon": {
+          "offset": 9,
+          "bit": 5,
+          "bits": 3
+        },
+        "championRibbon": {
+          "offset": 10,
+          "bit": 0,
+          "bits": 1
+        },
+        "winningRibbon": {
+          "offset": 10,
+          "bit": 1,
+          "bits": 1
+        },
+        "victoryRibbon": {
+          "offset": 10,
+          "bit": 2,
+          "bits": 1
+        },
+        "artistRibbon": {
+          "offset": 10,
+          "bit": 3,
+          "bits": 1
+        },
+        "effortRibbon": {
+          "offset": 10,
+          "bit": 4,
+          "bits": 1
+        },
+        "marineRibbon": {
+          "offset": 10,
+          "bit": 5,
+          "bits": 1
+        },
+        "landRibbon": {
+          "offset": 10,
+          "bit": 6,
+          "bits": 1
+        },
+        "skyRibbon": {
+          "offset": 10,
+          "bit": 7,
+          "bits": 1
+        },
+        "countryRibbon": {
+          "offset": 11,
+          "bit": 0,
+          "bits": 1
+        },
+        "nationalRibbon": {
+          "offset": 11,
+          "bit": 1,
+          "bits": 1
+        },
+        "earthRibbon": {
+          "offset": 11,
+          "bit": 2,
+          "bits": 1
+        },
+        "worldRibbon": {
+          "offset": 11,
+          "bit": 3,
+          "bits": 1
+        },
+        "unusedRibbons": {
+          "offset": 11,
+          "bit": 4,
+          "bits": 2
+        },
+        "nuzlockeRibbon": {
+          "offset": 11,
+          "bit": 6,
+          "bits": 1
+        },
+        "modernFatefulEncounter": {
+          "offset": 11,
+          "bit": 7,
+          "bits": 1
+        }
+      }
+    },
+    "ItemSlot": {
+      "size": 4,
+      "fields": {
+        "itemId": {
+          "offset": 0,
+          "bit": 0,
+          "bits": 16
+        },
+        "quantity": {
+          "offset": 2,
+          "bit": 0,
+          "bits": 16
+        }
+      }
+    },
+    "SpeciesInfo": {
+      "size": 40,
+      "fields": {
+        "baseHP": {
+          "offset": 0,
+          "bit": 0,
+          "bits": 8
+        },
+        "baseAttack": {
+          "offset": 1,
+          "bit": 0,
+          "bits": 8
+        },
+        "baseDefense": {
+          "offset": 2,
+          "bit": 0,
+          "bits": 8
+        },
+        "baseSpeed": {
+          "offset": 3,
+          "bit": 0,
+          "bits": 8
+        },
+        "baseSpAttack": {
+          "offset": 4,
+          "bit": 0,
+          "bits": 8
+        },
+        "baseSpDefense": {
+          "offset": 5,
+          "bit": 0,
+          "bits": 8
+        },
+        "types": {
+          "offset": 6,
+          "size": 2
+        },
+        "catchRate": {
+          "offset": 8,
+          "bit": 0,
+          "bits": 8
+        },
+        "expYield": {
+          "offset": 9,
+          "bit": 0,
+          "bits": 8
+        },
+        "itemCommon": {
+          "offset": 12,
+          "bit": 0,
+          "bits": 16
+        },
+        "itemRare": {
+          "offset": 14,
+          "bit": 0,
+          "bits": 16
+        },
+        "genderRatio": {
+          "offset": 16,
+          "bit": 0,
+          "bits": 8
+        },
+        "eggCycles": {
+          "offset": 17,
+          "bit": 0,
+          "bits": 8
+        },
+        "friendship": {
+          "offset": 18,
+          "bit": 0,
+          "bits": 8
+        },
+        "growthRate": {
+          "offset": 19,
+          "bit": 0,
+          "bits": 8
+        },
+        "eggGroups": {
+          "offset": 20,
+          "size": 2
+        },
+        "abilities": {
+          "offset": 22,
+          "size": 2
+        },
+        "safariZoneFleeRate": {
+          "offset": 24,
+          "bit": 0,
+          "bits": 8
+        },
+        "bodyColor": {
+          "offset": 25,
+          "bit": 0,
+          "bits": 7
+        },
+        "noFlip": {
+          "offset": 25,
+          "bit": 7,
+          "bits": 1
+        },
+        "baseHP_old": {
+          "offset": 26,
+          "bit": 0,
+          "bits": 8
+        },
+        "baseAttack_old": {
+          "offset": 27,
+          "bit": 0,
+          "bits": 8
+        },
+        "baseDefense_old": {
+          "offset": 28,
+          "bit": 0,
+          "bits": 8
+        },
+        "baseSpeed_old": {
+          "offset": 29,
+          "bit": 0,
+          "bits": 8
+        },
+        "baseSpAttack_old": {
+          "offset": 30,
+          "bit": 0,
+          "bits": 8
+        },
+        "baseSpDefense_old": {
+          "offset": 31,
+          "bit": 0,
+          "bits": 8
+        },
+        "types_old": {
+          "offset": 32,
+          "size": 2
+        },
+        "abilities_old": {
+          "offset": 34,
+          "size": 2
+        },
+        "types_new": {
+          "offset": 36,
+          "size": 2
+        },
+        "catchRate_hard": {
+          "offset": 38,
+          "bit": 0,
+          "bits": 8
+        }
+      }
+    },
+    "BattleMove": {
+      "size": 12,
+      "fields": {
+        "effect": {
+          "offset": 0,
+          "bit": 0,
+          "bits": 8
+        },
+        "power": {
+          "offset": 1,
+          "bit": 0,
+          "bits": 8
+        },
+        "type": {
+          "offset": 2,
+          "bit": 0,
+          "bits": 8
+        },
+        "accuracy": {
+          "offset": 3,
+          "bit": 0,
+          "bits": 8
+        },
+        "pp": {
+          "offset": 4,
+          "bit": 0,
+          "bits": 8
+        },
+        "secondaryEffectChance": {
+          "offset": 5,
+          "bit": 0,
+          "bits": 8
+        },
+        "target": {
+          "offset": 6,
+          "bit": 0,
+          "bits": 8
+        },
+        "priority": {
+          "offset": 7,
+          "bit": 0,
+          "bits": 8
+        },
+        "flags": {
+          "offset": 8,
+          "bit": 0,
+          "bits": 8
+        },
+        "category": {
+          "offset": 9,
+          "bit": 0,
+          "bits": 8
+        }
+      }
+    },
+    "Item": {
+      "size": 44,
+      "fields": {
+        "name": {
+          "offset": 0,
+          "size": 14
+        },
+        "itemId": {
+          "offset": 14,
+          "bit": 0,
+          "bits": 16
+        },
+        "price": {
+          "offset": 16,
+          "bit": 0,
+          "bits": 16
+        },
+        "holdEffect": {
+          "offset": 18,
+          "bit": 0,
+          "bits": 8
+        },
+        "holdEffectParam": {
+          "offset": 19,
+          "bit": 0,
+          "bits": 8
+        },
+        "description": {
+          "offset": 20,
+          "size": 4
+        },
+        "importance": {
+          "offset": 24,
+          "bit": 0,
+          "bits": 8
+        },
+        "pocket": {
+          "offset": 26,
+          "bit": 0,
+          "bits": 8
+        },
+        "type": {
+          "offset": 27,
+          "bit": 0,
+          "bits": 8
+        },
+        "battleUsage": {
+          "offset": 32,
+          "bit": 0,
+          "bits": 8
+        },
+        "secondaryId": {
+          "offset": 40,
+          "bit": 0,
+          "bits": 8
+        }
+      }
+    }
+  }
+}

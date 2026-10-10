@@ -1,0 +1,32 @@
+{
+  "name": "hns-save-editor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Save editor for Pokémon Heart & Soul v1.2.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "gen:layout": "node tools/gen-layout.ts",
+    "gen:data": "node tools/gen-data.ts",
+    "gen": "npm run gen:layout && npm run gen:data",
+    "verify:emu": "node tools/emu/verify.ts"
+  },
+  "dependencies": {
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4",
+    "vitest": "^4.1.11"
+  }
+}
